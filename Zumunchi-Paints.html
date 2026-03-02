@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zumunchi Paints & P.O.P Materials Enterprises.</title>
+
+<style>
+body{
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+margin:0;
+background:color(from lightblue srgb r g b);
+}
+
+/* Header */
+header{
+background:#0a0a0a;
+color:white;
+padding:15px;
+display:flex;
+align-items:center;
+}
+
+header img{
+width:100px;
+margin-right:15px;
+}
+
+/* Navigation */
+nav{
+background:#222;
+padding:12px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+font-size:16px;
+}
+
+nav a:hover{
+color:orange;
+}
+
+/* Sections */
+section{
+display:none;
+padding:20px;
+}
+
+#home{
+display:block;
+}
+
+/* Cards */
+.card{
+background:white;
+padding:20px;
+margin:15px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Gallery */
+.gallery img{
+width:280px;
+margin:10px;
+border-radius:10px;
+}
+
+/* Button */
+button{
+background:orange;
+color:white;
+border:none;
+padding:12px;
+font-size:16px;
+cursor:pointer;
+border-radius:5px;
+}
+
+button:hover{
+background:darkorange;
+}
+
+/* WhatsApp */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:20px;
+text-decoration:none;
+}
+
+/* Footer */
+footer{
+background:#0a0a0a;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+
+<img src="Image001.png" alt="Logo">
+
+<div>
+<h2>Zumunchi Paints & P.O.P Materials Enterprises.</h2>
+<p>POP Ceiling | Screeding | Painting | Interior & Exterior Design | And many more...</p>
+</div>
+
+</header>
+
+<nav>
+
+<a href="#" onclick="openPage('home')">Home</a>
+<a href="#" onclick="openPage('services')">Services</a>
+<a href="#" onclick="openPage('gallery')">Gallery</a>
+<a href="#" onclick="openPage('contact')">Contact</a>
+
+</nav>
+
+<section id="home">
+
+<div class="card">
+
+<h2>Welcome to Zumunchi Paints & P.O.P Materials Enterprises.</h2>
+
+<p>
+We provide professional POP ceiling installation, screeding, painting, and interior decoration services in Kano State and across Nigeria.
+</p>
+
+<p>
+Address: Sheka Yarkasuwa, Kumbotso LGA., Kano State. 
+</p>
+
+<p>
+Phone Numbers: 
++2347036997919 |
++2348082642215 |
++2348108027954 
+</p>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<div class="card">
+
+<h2>Our Services:</h2>
+
+<ul>
+
+<li>POP Ceiling Installation</li>
+<li>Wall Screeding</li>
+<li>Interior Painting</li>
+<li>Exterior Painting</li>
+<li>Wallpaper Installation</li>
+<li>3D Wall Designs</li>
+<li>Interior Decoration</li>
+<li>And many more... All available at affordable price!</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<div class="card">
+
+<h2>Our Products:</h2>
+
+<div class="gallery">
+
+<img src="Image003.png">
+<img src="Image002.png">
+<img src="Image006.png">
+<img src="Image007.png">
+<img src="Image005.png">
+<img src="Image009.jpg">
+<img src="Image010.jpg">
+<img src="Image012.jpg">
+<img src="Image013.jpg">
+<img src="Image014.jpg">
+
+</div>
+
+<p>All available in different brands and different kinds at affordable price!</p>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="card">
+
+<h2>Contact Us</h2>
+
+<p>Phone: +2347036997919</p>
+<p>WhatsApp: +2347036997919</p>
+<p>Address: Sheka Yarkasuwa, Kumbotso LGA., Kano State</p>
+
+<form onsubmit="return sendMessage()">
+
+<input type="text" id="name" placeholder="Your Name"><br><br>
+
+<input type="text" id="phone" placeholder="Your Phone"><br><br>
+
+<textarea id="message" placeholder="Your Message"></textarea><br><br>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+<p id="result"></p>
+
+</div>
+
+</section>
+
+<a class="whatsapp" href="https://wa.me/2347036997919">W</a>
+
+<footer>
+
+<p>© 2026 Zumunchi Paints & P.O.P Materials Enterprises.</p>
+
+</footer>
+
+<script>
+
+/* Navigation */
+
+function openPage(page){
+
+document.getElementById("home").style.display="none";
+document.getElementById("services").style.display="none";
+document.getElementById("gallery").style.display="none";
+document.getElementById("contact").style.display="none";
+
+document.getElementById(page).style.display="block";
+
+}
+
+/* Form */
+
+function sendMessage(){
+
+var name=document.getElementById("name").value;
+var phone=document.getElementById("phone").value;
+var message=document.getElementById("message").value;
+
+if(name=="" || phone=="" || message==""){
+
+document.getElementById("result").innerHTML="Please fill all fields";
+
+return false;
+
+}
+
+document.getElementById("result").innerHTML="Message sent successfully!";
+
+return false;
+
+}
+
+</script>
+
+</body>
+</html>
